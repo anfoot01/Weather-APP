@@ -35,7 +35,9 @@ button[type="submit"]{
     cursor:pointer;
 }
 .card{
-    background: linear-gradient(0deg, rgba(208,167,30,1) 0%, rgb(55, 165, 255) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;

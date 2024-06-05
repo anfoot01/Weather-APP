@@ -75,21 +75,21 @@ function displayWeatherInfo(data) {
 function getWeatherEmoji(weatherId) {
   switch (true) {
     case weatherId >= 200 && weatherId < 300:
-      return "⛈";
+      return thunderBg();
     case weatherId >= 300 && weatherId < 400:
-      return "🌧";
-    case weatherId >= 500 && weatherId < 500:
-      return "🌧";
+      return rainBg();
+    case weatherId >= 500 && weatherId < 600:
+      return rainBg();
     case weatherId >= 600 && weatherId < 700:
-      return "❄";
+      return snowBg();
     case weatherId >= 700 && weatherId < 800:
-      return "🌫";
+      return fogBg();
     case weatherId === 800:
-      return "🌞";
+      return sunBg();
     case weatherId >= 801 && weatherId < 810:
-      return "☁";
+      return cloudBg();
     default:
-      return "❓";
+      return cloudBg();
   }
 }
 
@@ -102,3 +102,32 @@ function displayError(message) {
   card.style.display = "flex";
   card.appendChild(errorDisplay);
 }
+
+
+//WEATHER BACKGROUND FUNCTION
+
+function thunderBg(){
+  card.style.background = "url(./img/thunderstorm.webp)"
+  card.style.color = "white";
+}
+function rainBg(){
+  card.style.background = "url(./img/rain.jpg)";
+  card.style.color = "white";
+}
+function cloudBg(){
+  card.style.background = "url(./img/clouds.jpg)";
+  card.style.color = "black";
+}
+function fogBg(){
+  card.style.background = "url(./img/fog.png)";
+  card.style.color = "black";
+}
+function sunBg(){
+  card.style.background = "url(./img/sun.jpg)";
+  card.style.color = "black";
+}
+function snowBg(){
+  card.style.background = "url(./img/snow.png)";
+  card.style.color = "black";
+}
+
