@@ -42,10 +42,13 @@ button[type="submit"]{
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    justify-content: center;
     padding: 40px;
     box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.5);
     min-width: 250px;
     border-radius: 10px;
+    max-width: 300px;
+    min-height: 500px;
 }
 .cityDisplay{
     padding: 10px;
