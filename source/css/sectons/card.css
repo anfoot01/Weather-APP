@@ -1,6 +1,8 @@
 
 .card{
     background-repeat: no-repeat; 
+    background-size: 150% 100%;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
