@@ -16,6 +16,7 @@ function displayWeatherInfo(data) {
     const humidityDisplay = document.createElement("p");
     const descDisplay = document.createElement("p");
     const weatherEmoji = document.createElement("p");
+    const tipsDisplay = document.createElement("p");
   
     cityDisplay.textContent = city;
     cityDisplay.classList.add("cityDisplay");
@@ -33,7 +34,12 @@ function displayWeatherInfo(data) {
     descDisplay.classList.add("descDisplay");
     card.appendChild(descDisplay);
   
-    weatherEmoji.textContent = getWeatherEmoji(id);
+    weatherEmoji.textContent = getWeatherBg(id);
     weatherEmoji.classList.add("weatherEmoji");
     card.appendChild(weatherEmoji);
+
+    
+    tipsDisplay.textContent = getWeatherTip(id);
+    tipsDisplay.classList.add("tipsDisplay");
+    card.appendChild(tipsDisplay);
   }

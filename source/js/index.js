@@ -35,7 +35,7 @@ async function getWeatherData(city) {
   return await response.json();
 }
 
-function getWeatherEmoji(weatherId) {
+function getWeatherBg(weatherId) {
   switch (true) {
     case weatherId >= 200 && weatherId < 300:
       return thunderBg();

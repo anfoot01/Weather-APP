@@ -14,8 +14,8 @@ weatherForm.addEventListener("submit", async (event) => {
       const weatherData = await getWeatherData();
       displayWeatherInfo(weatherData);
     } catch {
-      console.error(error);
-      displayError(error);
+      // console.error(error);
+      // displayError(error);
     }
   } else {
     displayError("Please enter a city");
@@ -24,21 +24,18 @@ weatherForm.addEventListener("submit", async (event) => {
 
 async function getWeatherData(city) {
   const cityId = cityInput.value;
-  
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityId}&appid=${apiKey}`;
   const response = await fetch(apiUrl);
 
   //CHECK__404
-  if (response.ok !==true) {
+  if (!response.ok) {
     throw new Error("Could not fetch weather data");
   }
-
-
   console.log(response.ok);
   return await response.json();
 }
 
-function getWeatherEmoji(weatherId) {
+function getWeatherBg(weatherId) {
   switch (true) {
     case weatherId >= 200 && weatherId < 300:
       return thunderBg();
