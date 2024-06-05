@@ -24,14 +24,17 @@ weatherForm.addEventListener("submit", async (event) => {
 
 async function getWeatherData(city) {
   const cityId = cityInput.value;
+  
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityId}&appid=${apiKey}`;
   const response = await fetch(apiUrl);
-  console.log(response);
 
-  if (response.ok !== true) {
+  //CHECK__404
+  if (response.ok !==true) {
     throw new Error("Could not fetch weather data");
   }
 
+
+  console.log(response.ok);
   return await response.json();
 }
 
