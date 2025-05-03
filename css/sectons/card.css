@@ -1,38 +1,60 @@
-
-.card{
-    background-repeat: no-repeat; 
-    background-size: 150% 100%;
-
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05); /* ще прозоріше */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
     justify-content: center;
-    padding: 40px;
-    box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.5);
     min-width: 250px;
-    border-radius: 10px;
-    max-width: 300px;
+    max-width: 400px;
     min-height: 400px;
-}
-.cityDisplay{
+    box-shadow:
+      0 0 60px rgba(0, 0, 0, 0.3),
+      inset 0 0 50px rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    right: -60px;
+    bottom: -60px;
+    z-index: -1;
+    background: inherit;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border-radius: 60px;
+    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 25%, black 100%);
+    opacity: 0.8;
+  }
+  
+
+.cityDisplay {
     padding: 10px;
     font-family: "Kablammo", system-ui;
-    font-size: 60px;
+    font-size: 90px;
 }
 
-    .tempDisplay{
-       font-size: 32px;
-    }
-    .humidityDisplay{
-        font-size: 18px;
-    }
-    .descDisplay{
-        font-size: 24px;
-    }
-    .weatherEmoji{
-        font-size: 62px;
-    }
-    .errorDisplay{
-        font-size: 32px;
-    }
+.tempDisplay {
+    font-size: 64px;
+}
+
+.humidityDisplay {
+    font-size: 32px;
+}
+
+.descDisplay {
+    font-size: 48px;
+}
+.windDisplay{
+    font-size: 32px;
+}

@@ -1,11 +1,10 @@
 // WEATHER APP
 //MAIN FILE
-
+const body = document.querySelector("body");
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
 const apiKey = "69cf6272d7ad24c46e6741f7f1ae75cf";
-
 weatherForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const city = cityInput.value;
@@ -17,9 +16,7 @@ weatherForm.addEventListener("submit", async (event) => {
       // console.error(error);
       // displayError(error);
     }
-  } else {
-    displayError("Please enter a city");
-  }
+  } 
 });
 
 async function getWeatherData(city) {
@@ -55,17 +52,4 @@ function getWeatherBg(weatherId) {
       return cloudBg();
   }
 }
-
-function displayError(message) {
-  const errorDisplay = document.createElement("p");
-  errorDisplay.textContent = message;
-  errorDisplay.classList.add("errorDisplay");
-
-  card.textContent = "";
-  card.style.display = "flex";
-  card.appendChild(errorDisplay);
-}
-
-
-
 
