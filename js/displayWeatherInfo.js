@@ -1,5 +1,5 @@
 function displayWeatherInfo(data) {
-  console.log(data);
+  console.log("DATA" + data);
   const {
     name: city,
     main: { temp, humidity },
