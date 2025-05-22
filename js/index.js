@@ -13,8 +13,7 @@ weatherForm.addEventListener("submit", async (event) => {
       const weatherData = await getWeatherData();
       displayWeatherInfo(weatherData);
     } catch {
-      // console.error(error);
-      // displayError(error);
+      console.error("error");
     }
   } 
 });
