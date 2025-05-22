@@ -58,3 +58,38 @@
 .windDisplay{
     font-size: 32px;
 }
+@media (max-width: 600px) {
+  .card {
+    padding: 10px;
+    gap: 20px;
+    width: 60%;
+    max-width: none;
+  }
+
+  .cityDisplay {
+    font-size: 38px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .tempDisplay {
+    font-size: 30px;
+  }
+
+  .humidityDisplay,
+  .windDisplay {
+    font-size: 16px;
+  }
+
+  .descDisplay {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  input,
+  button {
+    font-size: 16px !important;
+    width: 80% !important;
+    padding: 10px !important;
+  }
+}
